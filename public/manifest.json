@@ -1,0 +1,26 @@
+{
+  "name": "Jatin Sharma Portfolio",
+  "short_name": "JS Portfolio",
+  "description": "Portfolio showcasing game projects, hackathon wins, and web tools built by Jatin Sharma.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#38BDF8",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/portfolio.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+} 
