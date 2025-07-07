@@ -1,4 +1,5 @@
 import React from 'react';
+import ResumeUploader from '../../components/admin/ResumeUploader';
 
 const About: React.FC = () => {
   return (
@@ -105,29 +106,8 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Resume */}
-          <div className="bg-gunmetal-gray rounded-lg border border-cool-cyan/20 p-4">
-            <h2 className="text-lg font-semibold text-cool-cyan mb-4">Resume</h2>
-            <div className="flex flex-col items-center">
-              <div className="w-full p-4 bg-forge-black rounded-lg mb-4 flex items-center justify-between">
-                <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cool-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-chrome-silver">resume.pdf</span>
-                </div>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-cool-cyan hover:text-molten-orange">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                  </svg>
-                </a>
-              </div>
-              <button className="px-4 py-2 bg-cool-cyan text-forge-black rounded-lg hover:bg-cool-cyan/90 transition text-sm">
-                Upload New Resume
-              </button>
-            </div>
-          </div>
+          {/* Resume Section - Updated with ResumeUploader */}
+          <ResumeUploader />
 
           {/* Social Links */}
           <div className="bg-gunmetal-gray rounded-lg border border-cool-cyan/20 p-4">
