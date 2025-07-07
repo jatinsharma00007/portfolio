@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="10" y="10" width="80" height="80" rx="10" fill="#FF6B35" />
+  <text x="50" y="55" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">SIH</text>
+  <path d="M30,70 L40,60 L50,65 L60,55 L70,70" fill="none" stroke="#FFFFFF" stroke-width="3" />
+</svg> 

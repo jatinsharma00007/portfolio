@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>WebGL Asteroids</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-1">
+            <stop stop-color="#0A0A1A" offset="0%"></stop>
+            <stop stop-color="#1A1A2A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-2">
+            <stop stop-color="#33CCFF" offset="0%"></stop>
+            <stop stop-color="#3377FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Background -->
+        <rect id="background" fill="url(#gradient-1)" x="0" y="0" width="800" height="400" rx="0"></rect>
+        
+        <!-- Stars -->
+        <g id="stars" fill="#FFFFFF">
+            <circle cx="100" cy="50" r="1"></circle>
+            <circle cx="200" cy="150" r="1"></circle>
+            <circle cx="300" cy="250" r="1"></circle>
+            <circle cx="400" cy="50" r="1"></circle>
+            <circle cx="500" cy="350" r="1"></circle>
+            <circle cx="600" cy="250" r="1"></circle>
+            <circle cx="700" cy="150" r="1"></circle>
+            <circle cx="150" cy="300" r="1"></circle>
+            <circle cx="250" cy="200" r="1"></circle>
+            <circle cx="350" cy="100" r="1"></circle>
+            <circle cx="450" cy="300" r="1"></circle>
+            <circle cx="550" cy="200" r="1"></circle>
+            <circle cx="650" cy="100" r="1"></circle>
+            <circle cx="750" cy="300" r="1"></circle>
+            <circle cx="125" cy="75" r="1"></circle>
+            <circle cx="225" cy="175" r="1"></circle>
+            <circle cx="325" cy="275" r="1"></circle>
+            <circle cx="425" cy="75" r="1"></circle>
+            <circle cx="525" cy="375" r="1"></circle>
+            <circle cx="625" cy="275" r="1"></circle>
+            <circle cx="725" cy="175" r="1"></circle>
+            <circle cx="175" cy="325" r="1"></circle>
+            <circle cx="275" cy="225" r="1"></circle>
+            <circle cx="375" cy="125" r="1"></circle>
+            <circle cx="475" cy="325" r="1"></circle>
+            <circle cx="575" cy="225" r="1"></circle>
+            <circle cx="675" cy="125" r="1"></circle>
+            <circle cx="775" cy="325" r="1"></circle>
+        </g>
+        
+        <!-- Ship -->
+        <g id="ship" transform="translate(400, 200)">
+            <path d="M0,-15 L10,15 L0,10 L-10,15 Z" fill="#FFFFFF" stroke="#33CCFF" stroke-width="2"></path>
+            <circle cx="0" cy="0" r="2" fill="#33CCFF"></circle>
+        </g>
+        
+        <!-- Asteroids -->
+        <g id="asteroids">
+            <path d="M150,100 L170,90 L180,110 L160,130 L140,120 Z" fill="none" stroke="#AAAAAA" stroke-width="2"></path>
+            <path d="M600,150 L630,140 L640,170 L610,190 L590,170 Z" fill="none" stroke="#AAAAAA" stroke-width="2"></path>
+            <path d="M300,300 L320,280 L340,290 L330,320 L310,310 Z" fill="none" stroke="#AAAAAA" stroke-width="2"></path>
+            <path d="M500,100 L530,90 L540,110 L520,130 L490,110 Z" fill="none" stroke="#AAAAAA" stroke-width="2"></path>
+        </g>
+        
+        <!-- Bullets -->
+        <g id="bullets" fill="#FFFF33">
+            <circle cx="420" cy="180" r="2"></circle>
+            <circle cx="440" cy="160" r="2"></circle>
+            <circle cx="460" cy="140" r="2"></circle>
+        </g>
+        
+        <!-- Score Display -->
+        <g id="score" transform="translate(50, 50)">
+            <text font-family="monospace" font-size="16" fill="#FFFFFF">SCORE: 12500</text>
+        </g>
+        
+        <!-- Lives Display -->
+        <g id="lives" transform="translate(650, 50)">
+            <text font-family="monospace" font-size="16" fill="#FFFFFF">LIVES: 3</text>
+        </g>
+        
+        <!-- Game Title -->
+        <text x="400" y="350" font-family="Arial" font-size="24" fill="#33CCFF" text-anchor="middle" font-weight="bold">WEBGL ASTEROIDS</text>
+    </g>
+</svg> 

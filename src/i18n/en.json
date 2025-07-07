@@ -1,0 +1,11 @@
+{
+  "home": {
+    "greeting": "Hi, I'm Jatin",
+    "description": "Game Developer | Full-Stack Builder | Hackathon Finalist",
+    "cta": {
+      "projects": "View Projects",
+      "games": "Explore Games",
+      "contact": "Let's Talk"
+    }
+  }
+} 

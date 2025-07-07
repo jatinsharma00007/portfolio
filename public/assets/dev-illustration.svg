@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Developer Illustration</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-1">
+            <stop stop-color="#1E1E1E" offset="0%"></stop>
+            <stop stop-color="#2A2A2A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-2">
+            <stop stop-color="#FF7E33" offset="0%"></stop>
+            <stop stop-color="#FF5733" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-3">
+            <stop stop-color="#33A1FF" offset="0%"></stop>
+            <stop stop-color="#3377FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Background -->
+        <rect id="background" fill="url(#gradient-1)" x="0" y="0" width="800" height="500" rx="15"></rect>
+        
+        <!-- World Map (Simplified) -->
+        <path d="M100,250 C150,200 250,220 300,180 C350,140 400,160 450,200 C500,240 550,220 600,250 C650,280 700,260 750,300" 
+              stroke="#444444" stroke-width="2" stroke-dasharray="5,5"></path>
+        
+        <!-- Laptop -->
+        <g id="laptop" transform="translate(350, 230)">
+            <rect id="laptop-base" fill="#333333" x="-100" y="0" width="200" height="120" rx="5"></rect>
+            <rect id="laptop-screen" fill="#111111" x="-90" y="10" width="180" height="100" rx="3"></rect>
+            <rect id="laptop-keyboard" fill="#222222" x="-80" y="70" width="160" height="30" rx="2"></rect>
+            
+            <!-- Code on Screen -->
+            <g id="code" transform="translate(-70, 25)" fill="#CCCCCC">
+                <text font-family="monospace" font-size="8">
+                    <tspan x="0" y="0" fill="#33A1FF">function</tspan>
+                    <tspan x="40" y="0" fill="#CCCCCC"> createApp() {</tspan>
+                    <tspan x="0" y="15" fill="#CCCCCC">  return {</tspan>
+                    <tspan x="0" y="30" fill="#FF7E33">    component</tspan>
+                    <tspan x="50" y="30" fill="#CCCCCC">: </tspan>
+                    <tspan x="55" y="30" fill="#33FF99">'HelloWorld'</tspan>
+                    <tspan x="0" y="45" fill="#CCCCCC">  }</tspan>
+                    <tspan x="0" y="60" fill="#CCCCCC">}</tspan>
+                </text>
+            </g>
+        </g>
+        
+        <!-- Connection Points -->
+        <g id="connection-points">
+            <circle cx="200" cy="150" r="8" fill="url(#gradient-2)"></circle>
+            <circle cx="600" cy="200" r="8" fill="url(#gradient-3)"></circle>
+            <circle cx="400" cy="350" r="8" fill="url(#gradient-2)"></circle>
+            <circle cx="500" cy="150" r="8" fill="url(#gradient-3)"></circle>
+            <circle cx="300" cy="300" r="8" fill="url(#gradient-2)"></circle>
+        </g>
+        
+        <!-- Connection Lines -->
+        <g id="connection-lines" stroke-width="2" stroke-dasharray="3,3">
+            <path d="M200,150 C250,200 300,150 350,230" stroke="url(#gradient-2)"></path>
+            <path d="M600,200 C550,220 500,210 450,230" stroke="url(#gradient-3)"></path>
+            <path d="M400,350 C400,320 400,290 400,230" stroke="url(#gradient-2)"></path>
+            <path d="M500,150 C480,180 460,200 450,230" stroke="url(#gradient-3)"></path>
+            <path d="M300,300 C320,280 330,260 350,230" stroke="url(#gradient-2)"></path>
+        </g>
+        
+        <!-- Icons -->
+        <g id="icons">
+            <!-- Code Icon -->
+            <g transform="translate(190, 140)">
+                <rect width="20" height="20" fill="#1E1E1E" rx="3"></rect>
+                <text x="5" y="15" font-family="monospace" font-size="14" fill="#FF7E33">&lt;/&gt;</text>
+            </g>
+            
+            <!-- Cloud Icon -->
+            <g transform="translate(590, 190)">
+                <rect width="20" height="20" fill="#1E1E1E" rx="3"></rect>
+                <text x="5" y="15" font-family="monospace" font-size="14" fill="#33A1FF">☁</text>
+            </g>
+            
+            <!-- Database Icon -->
+            <g transform="translate(390, 340)">
+                <rect width="20" height="20" fill="#1E1E1E" rx="3"></rect>
+                <text x="5" y="15" font-family="monospace" font-size="14" fill="#FF7E33">⊙</text>
+            </g>
+            
+            <!-- Mobile Icon -->
+            <g transform="translate(490, 140)">
+                <rect width="20" height="20" fill="#1E1E1E" rx="3"></rect>
+                <text x="5" y="15" font-family="monospace" font-size="14" fill="#33A1FF">📱</text>
+            </g>
+            
+            <!-- Server Icon -->
+            <g transform="translate(290, 290)">
+                <rect width="20" height="20" fill="#1E1E1E" rx="3"></rect>
+                <text x="5" y="15" font-family="monospace" font-size="14" fill="#FF7E33">⚙</text>
+            </g>
+        </g>
+        
+        <!-- Floating Particles -->
+        <g id="particles">
+            <circle cx="150" cy="100" r="3" fill="#33A1FF" opacity="0.7"></circle>
+            <circle cx="650" cy="150" r="2" fill="#FF7E33" opacity="0.7"></circle>
+            <circle cx="250" cy="350" r="4" fill="#33A1FF" opacity="0.7"></circle>
+            <circle cx="550" cy="300" r="3" fill="#FF7E33" opacity="0.7"></circle>
+            <circle cx="450" cy="100" r="2" fill="#33A1FF" opacity="0.7"></circle>
+            <circle cx="700" cy="350" r="3" fill="#FF7E33" opacity="0.7"></circle>
+            <circle cx="100" cy="300" r="2" fill="#33A1FF" opacity="0.7"></circle>
+        </g>
+    </g>
+</svg> 

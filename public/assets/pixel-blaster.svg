@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pixel Blaster</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-1">
+            <stop stop-color="#1E1E1E" offset="0%"></stop>
+            <stop stop-color="#2A2A2A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient-2">
+            <stop stop-color="#FF7E33" offset="0%"></stop>
+            <stop stop-color="#FF5733" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Background -->
+        <rect id="background" fill="url(#gradient-1)" x="0" y="0" width="800" height="400" rx="0"></rect>
+        
+        <!-- Pixel Art Style Elements -->
+        <!-- Spaceship -->
+        <g id="spaceship" transform="translate(400, 250)">
+            <rect x="-20" y="-10" width="40" height="20" fill="#33A1FF"></rect>
+            <rect x="-30" y="-5" width="10" height="10" fill="#33A1FF"></rect>
+            <rect x="20" y="-5" width="10" height="10" fill="#33A1FF"></rect>
+            <rect x="-10" y="-20" width="20" height="10" fill="#33A1FF"></rect>
+            <rect x="-5" y="-30" width="10" height="10" fill="#FF7E33"></rect>
+        </g>
+        
+        <!-- Enemies -->
+        <g id="enemies">
+            <rect x="200" y="100" width="30" height="30" fill="#FF5733"></rect>
+            <rect x="500" y="150" width="30" height="30" fill="#FF5733"></rect>
+            <rect x="300" y="80" width="30" height="30" fill="#FF5733"></rect>
+            <rect x="600" y="120" width="30" height="30" fill="#FF5733"></rect>
+        </g>
+        
+        <!-- Bullets -->
+        <g id="bullets">
+            <rect x="380" y="200" width="5" height="10" fill="#FFFF33"></rect>
+            <rect x="415" y="180" width="5" height="10" fill="#FFFF33"></rect>
+            <rect x="250" y="120" width="5" height="10" fill="#FF3333"></rect>
+            <rect x="530" y="170" width="5" height="10" fill="#FF3333"></rect>
+        </g>
+        
+        <!-- Stars -->
+        <g id="stars" fill="#FFFFFF">
+            <rect x="100" y="50" width="2" height="2"></rect>
+            <rect x="200" y="150" width="2" height="2"></rect>
+            <rect x="300" y="250" width="2" height="2"></rect>
+            <rect x="400" y="50" width="2" height="2"></rect>
+            <rect x="500" y="350" width="2" height="2"></rect>
+            <rect x="600" y="250" width="2" height="2"></rect>
+            <rect x="700" y="150" width="2" height="2"></rect>
+            <rect x="150" y="300" width="2" height="2"></rect>
+            <rect x="250" y="200" width="2" height="2"></rect>
+            <rect x="350" y="100" width="2" height="2"></rect>
+            <rect x="450" y="300" width="2" height="2"></rect>
+            <rect x="550" y="200" width="2" height="2"></rect>
+            <rect x="650" y="100" width="2" height="2"></rect>
+            <rect x="750" y="300" width="2" height="2"></rect>
+        </g>
+        
+        <!-- Game Title -->
+        <text x="400" y="350" font-family="Arial" font-size="24" fill="#FF7E33" text-anchor="middle" font-weight="bold">PIXEL BLASTER</text>
+    </g>
+</svg> 
