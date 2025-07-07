@@ -9,8 +9,20 @@ import WebApps from './pages/WebApps';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Login from './pages/Admin/Login';
-import Dashboard from './pages/Admin/Dashboard';
+
+// Admin imports
+import AdminLayout from './admin/layouts/AdminLayout';
+import AdminRoute from './admin/components/AdminRoute';
+import AdminLogin from './admin/pages/Login';
+import AdminDashboard from './admin/pages/Dashboard';
+import AdminProjects from './admin/pages/Projects';
+import AdminHackathons from './admin/pages/Hackathons';
+import AdminGames from './admin/pages/Games';
+import AdminMessages from './admin/pages/Messages';
+import AdminAbout from './admin/pages/About';
+import AboutEditor from './admin/pages/AboutEditor';
+import WebAppsManager from './admin/pages/WebApps';
+import GlobalSettingsManager from './admin/pages/GlobalSettings';
 
 function App() {
   // Set HTML lang attribute for SEO and accessibility
@@ -33,8 +45,22 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <Routes>
         {/* Admin Routes */}
-        <Route path="/admin" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        
+        {/* Protected Admin Routes */}
+        <Route element={<AdminRoute />}>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/projects" element={<AdminProjects />} />
+            <Route path="/admin/hackathons" element={<AdminHackathons />} />
+            <Route path="/admin/games" element={<AdminGames />} />
+            <Route path="/admin/messages" element={<AdminMessages />} />
+            <Route path="/admin/about" element={<AdminAbout />} />
+            <Route path="/admin/about-editor" element={<AboutEditor />} />
+            <Route path="/admin/webapps" element={<WebAppsManager />} />
+            <Route path="/admin/settings" element={<GlobalSettingsManager />} />
+          </Route>
+        </Route>
         
         {/* Public Routes */}
         <Route path="/" element={
