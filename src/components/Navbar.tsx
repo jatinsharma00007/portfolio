@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const languages = [
+    { code: 'en', label: '🇺🇸' },
+    { code: 'hi', label: '🇮🇳' },
+    { code: 'ja', label: '🇯🇵' }
+  ];
 
   return (
     <nav className="bg-gunmetal-gray text-chrome-silver shadow-lg">
@@ -26,43 +34,61 @@ const Navbar: React.FC = () => {
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                Home
+                {t('navigation.home')}
               </NavLink>
               <NavLink to="/about" 
                 className={({isActive}) => 
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                About
+                {t('navigation.about')}
               </NavLink>
               <NavLink to="/games" 
                 className={({isActive}) => 
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                Games
+                {t('navigation.games')}
               </NavLink>
               <NavLink to="/hackathons" 
                 className={({isActive}) => 
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                Hackathons
+                {t('navigation.hackathons')}
               </NavLink>
               <NavLink to="/webapps" 
                 className={({isActive}) => 
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                Web Apps
+                {t('navigation.webapps')}
               </NavLink>
               <NavLink to="/contact" 
                 className={({isActive}) => 
                   isActive ? "text-molten-orange" : "hover:text-molten-orange transition"
                 }
               >
-                Contact
+                {t('navigation.contact')}
               </NavLink>
+              
+              {/* Language switcher - Desktop */}
+              <div className="flex gap-2 ml-4 border-l border-cool-cyan/30 pl-4">
+                {languages.map(({ code, label }) => (
+                  <button
+                    key={code}
+                    onClick={() => i18n.changeLanguage(code)}
+                    className={`px-2 py-1 rounded transition-all ${
+                      i18n.language === code 
+                        ? 'bg-molten-orange text-forge-black' 
+                        : 'text-cool-cyan hover:bg-forge-black/30'
+                    }`}
+                    aria-label={`Switch to ${code} language`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
           
@@ -101,7 +127,7 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t('navigation.home')}
             </NavLink>
             <NavLink 
               to="/about" 
@@ -110,7 +136,7 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {t('navigation.about')}
             </NavLink>
             <NavLink 
               to="/games" 
@@ -119,7 +145,7 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Games
+              {t('navigation.games')}
             </NavLink>
             <NavLink 
               to="/hackathons" 
@@ -128,7 +154,7 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Hackathons
+              {t('navigation.hackathons')}
             </NavLink>
             <NavLink 
               to="/webapps" 
@@ -137,7 +163,7 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Web Apps
+              {t('navigation.webapps')}
             </NavLink>
             <NavLink 
               to="/contact" 
@@ -146,8 +172,26 @@ const Navbar: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t('navigation.contact')}
             </NavLink>
+            
+            {/* Language switcher - Mobile */}
+            <div className="flex gap-2 mt-4 pt-4 border-t border-cool-cyan/30">
+              {languages.map(({ code, label }) => (
+                <button
+                  key={code}
+                  onClick={() => i18n.changeLanguage(code)}
+                  className={`px-3 py-2 rounded flex-1 transition-all ${
+                    i18n.language === code 
+                      ? 'bg-molten-orange text-forge-black' 
+                      : 'text-cool-cyan hover:bg-forge-black/30'
+                  }`}
+                  aria-label={`Switch to ${code} language`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}

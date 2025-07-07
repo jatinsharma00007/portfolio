@@ -1,11 +1,20 @@
 {
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "games": "Games",
+    "hackathons": "Hackathons",
+    "webapps": "Web Apps",
+    "contact": "Contact"
+  },
   "home": {
     "greeting": "Hi, I'm Jatin",
-    "description": "Game Developer | Full-Stack Builder | Hackathon Finalist",
+    "description": "I build games and tools that solve real-world problems with creativity and code.",
     "cta": {
-      "projects": "View Projects",
+      "projects": "View Portfolio",
       "games": "Explore Games",
-      "contact": "Let's Talk"
+      "contact": "Let's Chat",
+      "resume": "Download Resume"
     }
   }
 } 

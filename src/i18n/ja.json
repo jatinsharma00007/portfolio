@@ -1,11 +1,20 @@
 {
+  "navigation": {
+    "home": "ホーム",
+    "about": "プロフィール",
+    "games": "ゲーム",
+    "hackathons": "ハッカソン",
+    "webapps": "ウェブアプリ",
+    "contact": "お問い合わせ"
+  },
   "home": {
     "greeting": "こんにちは、ジャティンです",
-    "description": "ゲーム開発者 | フルスタック開発者 | ハッカソンファイナリスト",
+    "description": "創造性とコードで実際の問題を解決するゲームやツールを作ります。",
     "cta": {
-      "projects": "プロジェクトを見る",
+      "projects": "ポートフォリオを見る",
       "games": "ゲームを見る",
-      "contact": "連絡する"
+      "contact": "お問い合わせ",
+      "resume": "履歴書をダウンロード"
     }
   }
 } 
