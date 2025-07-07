@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { aboutData } from '../../data/aboutData';
 import type { TimelineEntry, Hobby, AboutData } from '../../data/aboutData';
 

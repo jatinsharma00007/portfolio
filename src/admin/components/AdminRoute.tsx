@@ -1,16 +1,11 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { isAdminLoggedIn } from '../../hooks/useAuth';
+import { useAdminGuard } from '../../hooks/useAdminGuard';
 
 const AdminRoute: React.FC = () => {
-  const isLoggedIn = isAdminLoggedIn();
+  // Use the admin guard hook
+  useAdminGuard();
   
-  // If not authenticated, redirect to login page
-  if (!isLoggedIn) {
-    return <Navigate to="/admin/login" replace />;
-  }
-  
-  // If authenticated, render the child routes
   return <Outlet />;
 };
 

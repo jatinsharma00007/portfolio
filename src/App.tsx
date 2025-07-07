@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import i18n from './i18n';
@@ -25,6 +25,7 @@ import AboutEditor from './admin/pages/AboutEditor';
 import WebAppsManager from './admin/pages/WebApps';
 import GlobalSettingsManager from './admin/pages/GlobalSettings';
 import NotFound from './pages/NotFound';
+import ResetPassword from './pages/auth/ResetPassword';
 
 // Meta data for each route
 const routeMeta = {
@@ -135,6 +136,7 @@ function App() {
         <Routes>
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/auth/reset-password" element={<ResetPassword />} />
           
           {/* Protected Admin Routes */}
           <Route element={<AdminRoute />}>

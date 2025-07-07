@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { logoutAdmin } from '../../hooks/useAuth';
+import { supabase } from '../../lib/supabase';
+import { useAdminGuard } from '../../hooks/useAdminGuard';
 
 const AdminLayout: React.FC = () => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const navigate = useNavigate();
 
+  // Protect all admin routes
+  useAdminGuard();
+
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
   };
 
-  const handleLogout = () => {
-    logoutAdmin();
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     navigate('/admin/login');
   };
 
