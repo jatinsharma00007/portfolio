@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const [currentLang, setCurrentLang] = useState(i18n.language);
+
+  // Update current language state when i18n language changes
+  useEffect(() => {
+    setCurrentLang(i18n.language);
+  }, [i18n.language]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code)
+      .then(() => {
+        console.log(`Language changed to ${code}`);
+        setCurrentLang(code);
+      })
+      .catch(err => console.error('Error changing language:', err));
   };
 
   const languages = [
@@ -77,9 +92,9 @@ const Navbar: React.FC = () => {
                 {languages.map(({ code, label }) => (
                   <button
                     key={code}
-                    onClick={() => i18n.changeLanguage(code)}
+                    onClick={() => changeLanguage(code)}
                     className={`px-2 py-1 rounded transition-all ${
-                      i18n.language === code 
+                      currentLang === code 
                         ? 'bg-molten-orange text-forge-black' 
                         : 'text-cool-cyan hover:bg-forge-black/30'
                     }`}
@@ -180,9 +195,9 @@ const Navbar: React.FC = () => {
               {languages.map(({ code, label }) => (
                 <button
                   key={code}
-                  onClick={() => i18n.changeLanguage(code)}
+                  onClick={() => changeLanguage(code)}
                   className={`px-3 py-2 rounded flex-1 transition-all ${
-                    i18n.language === code 
+                    currentLang === code 
                       ? 'bg-molten-orange text-forge-black' 
                       : 'text-cool-cyan hover:bg-forge-black/30'
                   }`}

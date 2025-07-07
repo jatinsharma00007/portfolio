@@ -16,5 +16,73 @@
       "contact": "お問い合わせ",
       "resume": "履歴書をダウンロード"
     }
+  },
+  "about": {
+    "heading": "プロフィール",
+    "bio": "私はジャティンです。ゲーム開発者、フルスタックウェブ/アプリ開発者、そしてハッカソン愛好家です。特にゲームや開発ツールにおいて、アイデアをインタラクティブで役立つデジタル製品に変えることが大好きです。パフォーマンスと創造性を持つ効果的なソリューションを作るために、常に新しい技術を探求しています。",
+    "categories": {
+      "gamedev": "ゲーム開発",
+      "webdev": "ウェブ開発",
+      "uiux": "UI/UXツール",
+      "firebase": "Firebase＆DB"
+    },
+    "resume": "履歴書をダウンロード"
+  },
+  "projects": {
+    "heading": "プロジェクト＆ゲーム",
+    "github": "GitHub",
+    "demo": "ライブデモ"
+  },
+  "hackathons": {
+    "heading": "ハッカソン＆実績",
+    "role": "役割",
+    "tools": "使用ツール",
+    "viewEvent": "イベントを見る"
+  },
+  "games": {
+    "heading": "私のゲーム開発の世界 🎮",
+    "description": "2Dピクセルアドベンチャーからマルチプレイヤーまで、コードと創造性で作り上げたゲームを探索してください。",
+    "filter": {
+      "all": "すべて"
+    },
+    "cta": {
+      "heading": "もっとゲームをプレイ",
+      "description": "様々なプラットフォームで私の作品を探索",
+      "github": "GitHub",
+      "itch": "Itch.io",
+      "playstore": "Play ストア"
+    },
+    "modal": {
+      "close": "閉じる",
+      "viewSource": "ソースを見る",
+      "playGame": "ゲームをプレイ"
+    }
+  },
+  "contact": {
+    "heading": "お問い合わせ",
+    "description": "プロジェクトのアイデアがありますか？または協力したいですか？以下のフォームから連絡するか、ライブチャットを開始してください。",
+    "form": {
+      "title": "メッセージを送信",
+      "name": "お名前",
+      "namePlaceholder": "あなたの名前",
+      "email": "メールアドレス",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "メッセージ",
+      "messagePlaceholder": "あなたのプロジェクトや質問について教えてください...",
+      "sending": "送信中...",
+      "send": "メッセージを送信",
+      "success": "メッセージが正常に送信されました！",
+      "errors": {
+        "allFields": "すべてのフィールドに入力してください",
+        "validEmail": "有効なメールアドレスを入力してください"
+      }
+    },
+    "alternate": {
+      "text": "こちらでも連絡できます：",
+      "email": "contact@jatin.dev"
+    },
+    "chat": {
+      "title": "ライブチャット"
+    }
   }
 } 

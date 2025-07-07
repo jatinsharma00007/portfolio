@@ -1,11 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import hackathons from '../data/hackathons';
 
 const HackathonsSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="w-full bg-gunmetal-gray text-chrome-silver py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto space-y-12">
-        <h2 className="text-3xl font-bold text-molten-orange text-center">Hackathons & Achievements</h2>
+        <h2 className="text-3xl font-bold text-molten-orange text-center">{t('hackathons.heading')}</h2>
         
         <div className="grid md:grid-cols-2 gap-8">
           {hackathons.map((event) => (
@@ -27,7 +30,7 @@ const HackathonsSection: React.FC = () => {
               
               <p className="mb-3 text-sm flex items-center gap-2">
                 <span className="text-chrome-silver">👨‍💻</span> 
-                <span className="text-cool-cyan">{event.role}</span>
+                <span className="text-cool-cyan">{t('hackathons.role')}: {event.role}</span>
               </p>
               
               <div className="flex flex-wrap gap-2 mt-3">
@@ -52,7 +55,7 @@ const HackathonsSection: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
                   </svg>
-                  View Event
+                  {t('hackathons.viewEvent')}
                 </a>
               </div>
             </div>

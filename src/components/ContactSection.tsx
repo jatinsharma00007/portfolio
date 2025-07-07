@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import LiveChat from './LiveChat';
 
 interface FormData {
@@ -8,6 +9,7 @@ interface FormData {
 }
 
 const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -33,7 +35,7 @@ const ContactSection: React.FC = () => {
     
     // Validate form
     if (!formData.name || !formData.email || !formData.message) {
-      setErrorMessage('Please fill in all fields');
+      setErrorMessage(t('contact.form.errors.allFields'));
       setIsSubmitting(false);
       setSubmitSuccess(false);
       return;
@@ -42,7 +44,7 @@ const ContactSection: React.FC = () => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setErrorMessage('Please enter a valid email address');
+      setErrorMessage(t('contact.form.errors.validEmail'));
       setIsSubmitting(false);
       setSubmitSuccess(false);
       return;
@@ -68,51 +70,51 @@ const ContactSection: React.FC = () => {
   return (
     <section className="w-full bg-gunmetal-gray text-chrome-silver py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto space-y-8">
-        <h2 className="text-3xl font-bold text-molten-orange text-center">Get In Touch</h2>
+        <h2 className="text-3xl font-bold text-molten-orange text-center">{t('contact.heading')}</h2>
         <p className="text-center max-w-2xl mx-auto text-steel-blue">
-          Have a project in mind or want to collaborate? Feel free to reach out through the form below or start a live chat.
+          {t('contact.description')}
         </p>
         
         <div className="flex flex-col lg:flex-row gap-12 mt-10">
           {/* Contact Form (Left) */}
           <div className="w-full lg:w-1/2 space-y-6">
-            <h3 className="text-xl font-semibold text-cool-cyan">Send a Message</h3>
+            <h3 className="text-xl font-semibold text-cool-cyan">{t('contact.form.title')}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm text-steel-blue mb-1">Full Name</label>
+                <label htmlFor="name" className="block text-sm text-steel-blue mb-1">{t('contact.form.name')}</label>
                 <input 
                   type="text" 
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your name" 
+                  placeholder={t('contact.form.namePlaceholder')}
                   className="w-full px-4 py-3 bg-forge-black border border-cool-cyan rounded-lg text-chrome-silver focus:outline-none focus:ring-1 focus:ring-molten-orange" 
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm text-steel-blue mb-1">Email Address</label>
+                <label htmlFor="email" className="block text-sm text-steel-blue mb-1">{t('contact.form.email')}</label>
                 <input 
                   type="email" 
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="your.email@example.com" 
+                  placeholder={t('contact.form.emailPlaceholder')}
                   className="w-full px-4 py-3 bg-forge-black border border-cool-cyan rounded-lg text-chrome-silver focus:outline-none focus:ring-1 focus:ring-molten-orange" 
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm text-steel-blue mb-1">Your Message</label>
+                <label htmlFor="message" className="block text-sm text-steel-blue mb-1">{t('contact.form.message')}</label>
                 <textarea 
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell me about your project or inquiry..." 
+                  placeholder={t('contact.form.messagePlaceholder')}
                   rows={5} 
                   className="w-full px-4 py-3 bg-forge-black border border-cool-cyan rounded-lg text-chrome-silver focus:outline-none focus:ring-1 focus:ring-molten-orange" 
                 />
@@ -123,7 +125,7 @@ const ContactSection: React.FC = () => {
               )}
               
               {submitSuccess && (
-                <p className="text-cool-cyan text-sm">Your message has been sent successfully!</p>
+                <p className="text-cool-cyan text-sm">{t('contact.form.success')}</p>
               )}
               
               <button 
@@ -137,27 +139,27 @@ const ContactSection: React.FC = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending...
+                    {t('contact.form.sending')}
                   </>
-                ) : 'Send Message'}
+                ) : t('contact.form.send')}
               </button>
             </form>
             
             <div className="pt-6 border-t border-gunmetal-gray">
-              <p className="text-sm text-steel-blue">You can also reach me at:</p>
+              <p className="text-sm text-steel-blue">{t('contact.alternate.text')}</p>
               <div className="flex items-center gap-2 mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cool-cyan" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a href="mailto:contact@jatin.dev" className="text-cool-cyan hover:text-molten-orange transition">contact@jatin.dev</a>
+                <a href="mailto:contact@jatin.dev" className="text-cool-cyan hover:text-molten-orange transition">{t('contact.alternate.email')}</a>
               </div>
             </div>
           </div>
           
           {/* Live Chat (Right) */}
           <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-semibold text-cool-cyan mb-6">Live Chat</h3>
+            <h3 className="text-xl font-semibold text-cool-cyan mb-6">{t('contact.chat.title')}</h3>
             <LiveChat />
           </div>
         </div>

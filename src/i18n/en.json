@@ -16,5 +16,73 @@
       "contact": "Let's Chat",
       "resume": "Download Resume"
     }
+  },
+  "about": {
+    "heading": "About Me",
+    "bio": "I'm Jatin, a passionate game developer, full-stack web/app builder, and hackathon enthusiast. I love turning ideas into interactive and useful digital products — especially in gaming and developer tools. I constantly explore new technologies to create impactful solutions with performance and creativity.",
+    "categories": {
+      "gamedev": "Game Dev",
+      "webdev": "Web Dev",
+      "uiux": "UI/UX Tools",
+      "firebase": "Firebase & DB"
+    },
+    "resume": "Download Resume"
+  },
+  "projects": {
+    "heading": "Projects & Games",
+    "github": "GitHub",
+    "demo": "Live Demo"
+  },
+  "hackathons": {
+    "heading": "Hackathons & Achievements",
+    "role": "Role",
+    "tools": "Tools Used",
+    "viewEvent": "View Event"
+  },
+  "games": {
+    "heading": "My Game Dev World 🎮",
+    "description": "From 2D pixel adventures to multiplayer madness, explore the games I've crafted with code and creativity.",
+    "filter": {
+      "all": "All"
+    },
+    "cta": {
+      "heading": "Play More Games",
+      "description": "Explore all of my work across platforms",
+      "github": "GitHub",
+      "itch": "Itch.io",
+      "playstore": "Play Store"
+    },
+    "modal": {
+      "close": "Close",
+      "viewSource": "View Source",
+      "playGame": "Play Game"
+    }
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "description": "Have a project in mind or want to collaborate? Feel free to reach out through the form below or start a live chat.",
+    "form": {
+      "title": "Send a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Your name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell me about your project or inquiry...",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "success": "Your message has been sent successfully!",
+      "errors": {
+        "allFields": "Please fill in all fields",
+        "validEmail": "Please enter a valid email address"
+      }
+    },
+    "alternate": {
+      "text": "You can also reach me at:",
+      "email": "contact@jatin.dev"
+    },
+    "chat": {
+      "title": "Live Chat"
+    }
   }
 } 

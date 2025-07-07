@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import unityIcon from '../assets/unity.svg';
 import reactIcon from '../assets/react.svg';
 import typescriptIcon from '../assets/typescript.svg';
@@ -9,6 +10,8 @@ import figmaIcon from '../assets/figma.svg';
 import firebaseIcon from '../assets/firebase.svg';
 
 const AboutSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   const tools = [
     { name: "Unity", icon: unityIcon },
     { name: "React", icon: reactIcon },
@@ -25,21 +28,18 @@ const AboutSection: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Bio */}
         <div className="text-center md:text-left space-y-4">
-          <h2 className="text-3xl font-bold text-molten-orange">About Me</h2>
+          <h2 className="text-3xl font-bold text-molten-orange">{t('about.heading')}</h2>
           <p className="text-lg text-steel-blue max-w-3xl mx-auto md:mx-0">
-            I'm Jatin, a passionate game developer, full-stack web/app builder, and hackathon enthusiast. 
-            I love turning ideas into interactive and useful digital products — especially in gaming and 
-            developer tools. I constantly explore new technologies to create impactful solutions with 
-            performance and creativity.
+            {t('about.bio')}
           </p>
         </div>
 
         {/* Stack Categories */}
         <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-6">
-          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">Game Dev</div>
-          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">Web Dev</div>
-          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">UI/UX Tools</div>
-          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">Firebase & DB</div>
+          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">{t('about.categories.gamedev')}</div>
+          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">{t('about.categories.webdev')}</div>
+          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">{t('about.categories.uiux')}</div>
+          <div className="px-4 py-2 bg-forge-black border border-cool-cyan rounded-full text-cool-cyan text-sm">{t('about.categories.firebase')}</div>
         </div>
 
         {/* Skills / Technologies Grid */}
@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
             download 
             className="px-5 py-3 rounded-xl bg-steel-blue text-white hover:bg-cool-cyan hover:text-forge-black transition"
           >
-            Download Resume
+            {t('about.resume')}
           </a>
         </div>
       </div>

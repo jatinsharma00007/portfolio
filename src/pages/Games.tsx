@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import games from "../data/games";
 import GameCard from "../components/GameCard";
 import type { Game } from '../data/games';
 
 export default function Games() {
+  const { t } = useTranslation();
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [activeFilter, setFilter] = useState<string>("All");
 
@@ -28,9 +30,9 @@ export default function Games() {
       <div className="max-w-6xl mx-auto space-y-20 text-chrome-silver">
         {/* Section 1: Hero Header */}
         <div id="games-hero" className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-molten-orange">My Game Dev World 🎮</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-molten-orange">{t('games.heading')}</h1>
           <p className="mt-4 text-lg md:text-xl text-steel-blue">
-            From 2D pixel adventures to multiplayer madness, explore the games I've crafted with code and creativity.
+            {t('games.description')}
           </p>
         </div>
 
@@ -46,7 +48,7 @@ export default function Games() {
                   : "text-cool-cyan border-cool-cyan"
               } hover:bg-molten-orange hover:text-forge-black hover:border-molten-orange transition`}
             >
-              {tag}
+              {tag === "All" ? t('games.filter.all') : tag}
             </button>
           ))}
         </div>
@@ -64,8 +66,8 @@ export default function Games() {
 
         {/* Section 5: CTA */}
         <div id="games-cta" className="text-center space-y-4">
-          <h2 className="text-2xl text-molten-orange font-bold">Play More Games</h2>
-          <p className="text-steel-blue">Explore all of my work across platforms</p>
+          <h2 className="text-2xl text-molten-orange font-bold">{t('games.cta.heading')}</h2>
+          <p className="text-steel-blue">{t('games.cta.description')}</p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <a 
               href="https://github.com/yourusername" 
@@ -73,7 +75,7 @@ export default function Games() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              💻 GitHub
+              💻 {t('games.cta.github')}
             </a>
             <a 
               href="https://your.itch.io/" 
@@ -81,7 +83,7 @@ export default function Games() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              🎮 Itch.io
+              🎮 {t('games.cta.itch')}
             </a>
             <a 
               href="https://play.google.com/store/apps/dev?id=YOURID" 
@@ -89,7 +91,7 @@ export default function Games() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              📱 Play Store
+              📱 {t('games.cta.playstore')}
             </a>
           </div>
         </div>
@@ -101,7 +103,7 @@ export default function Games() {
               <button 
                 onClick={() => setSelectedGame(null)} 
                 className="absolute top-3 right-4 text-cool-cyan hover:text-molten-orange text-xl"
-                aria-label="Close modal"
+                aria-label={t('games.modal.close')}
               >
                 ✖️
               </button>
@@ -130,7 +132,7 @@ export default function Games() {
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-forge-black text-cool-cyan rounded-md hover:text-molten-orange transition"
                   >
-                    🔗 View Source
+                    🔗 {t('games.modal.viewSource')}
                   </a>
                 )}
                 {selectedGame.demo && (
@@ -140,7 +142,7 @@ export default function Games() {
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-molten-orange text-forge-black rounded-md hover:bg-cool-cyan transition"
                   >
-                    ▶️ Play Game
+                    ▶️ {t('games.modal.playGame')}
                   </a>
                 )}
               </div>

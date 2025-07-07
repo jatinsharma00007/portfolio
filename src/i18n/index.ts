@@ -16,7 +16,20 @@ i18n
       ja: { translation: ja }
     },
     fallbackLng: 'en',
-    interpolation: { escapeValue: false }
+    interpolation: { escapeValue: false },
+    detection: {
+      // Order of detection methods
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      
+      // Cache language selection in localStorage
+      caches: ['localStorage'],
+      
+      // localStorage key name
+      lookupLocalStorage: 'i18nextLng',
+      
+      // Only detect from navigator.languages when available
+      convertDetectedLanguage: (lng) => lng.split('-')[0]
+    }
   });
 
 export default i18n; 

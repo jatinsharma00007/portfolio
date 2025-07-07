@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import i18n from './i18n';
 import Home from './pages/Home';
 import About from './pages/About';
 import Games from './pages/Games';
@@ -11,6 +13,22 @@ import Login from './pages/Admin/Login';
 import Dashboard from './pages/Admin/Dashboard';
 
 function App() {
+  // Set HTML lang attribute for SEO and accessibility
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+    
+    // Update lang attribute whenever language changes
+    const handleLanguageChanged = () => {
+      document.documentElement.lang = i18n.language;
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>

@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 
 const HeroSection: React.FC = () => {
   const { t } = useTranslation();
+  const [currentLang, setCurrentLang] = useState(i18n.language);
   
-  // Log current language (for testing)
-  console.log("Current language:", i18n.language);
+  // Update current language state when i18n language changes
+  useEffect(() => {
+    setCurrentLang(i18n.language);
+  }, [i18n.language]);
   
-  // Function to change language (for testing)
+  // Function to change language
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+    i18n.changeLanguage(lng)
+      .then(() => {
+        setCurrentLang(lng);
+      })
+      .catch(err => console.error('Error changing language:', err));
   };
 
   return (
@@ -19,21 +26,21 @@ const HeroSection: React.FC = () => {
       <div className="absolute top-6 right-6 space-x-2 text-sm font-semibold text-cool-cyan">
         <button 
           onClick={() => changeLanguage('en')} 
-          className={`hover:text-molten-orange ${i18n.language === 'en' ? 'text-molten-orange' : ''}`}
+          className={`hover:text-molten-orange ${currentLang === 'en' ? 'text-molten-orange' : ''}`}
         >
           EN
         </button>
         <span>|</span>
         <button 
           onClick={() => changeLanguage('hi')} 
-          className={`hover:text-molten-orange ${i18n.language === 'hi' ? 'text-molten-orange' : ''}`}
+          className={`hover:text-molten-orange ${currentLang === 'hi' ? 'text-molten-orange' : ''}`}
         >
           HI
         </button>
         <span>|</span>
         <button 
           onClick={() => changeLanguage('ja')} 
-          className={`hover:text-molten-orange ${i18n.language === 'ja' ? 'text-molten-orange' : ''}`}
+          className={`hover:text-molten-orange ${currentLang === 'ja' ? 'text-molten-orange' : ''}`}
         >
           JA
         </button>
